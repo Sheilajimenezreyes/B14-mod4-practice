@@ -1,0 +1,63 @@
+@import "../mixins/mixin-button";
+.first-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(30, 29, 29);
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  .left-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      li{
+         &:hover{
+            transform: scale(1.2);
+        }
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: Arial;
+        font-size: 15px;
+        transition: transform 0.2s ease;
+       
+      }
+    }
+  }
+  .right-part{
+    input{
+        height: 28px;
+        border-radius: 5px;
+    }
+    button{
+        @include buttons()
+    }
+  }
+}
+.second-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(238, 234, 234);
+    padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+    .second-part{
+        cursor: pointer;
+    }
+    .selects-options{
+        select{
+            width: 150px;
+            height: 35px;
+            border-radius: 5px;
+        }
+        
+    
+    }
+}
