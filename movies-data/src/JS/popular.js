@@ -1,15 +1,27 @@
 import { popular } from "./Peticion-api/api";
 
-export async function showPopular() {
-    const movies = await popular()
-    const app = document.querySelector("#app")
-    const section = document.createElement("section")
-    section.classList = "container-grid"
-    movies.forEach(movie => {
-        let divs = newFunction(movie);
-        section.appendChild(divs)
-        app.appendChild(section)
-    });
+export async function showPopular(movies = "vacio") {
+    if (movies === "vacio") {
+        movies = await popular()
+        const app = document.querySelector("#app")
+        const section = document.createElement("section")
+        section.classList = "container-grid"
+        movies.forEach(movie => {
+            let divs = newFunction(movie);
+            section.appendChild(divs)
+            app.appendChild(section)
+        });
+    } else {
+        const app = document.querySelector("#app")
+        const section = document.createElement("section")
+        section.classList = "container-grid"
+        movies.forEach(movie => {
+            let divs = newFunction(movie);
+            section.appendChild(divs)
+            app.appendChild(section)
+        });
+    }
+ 
 }
 
 function newFunction(movie) {

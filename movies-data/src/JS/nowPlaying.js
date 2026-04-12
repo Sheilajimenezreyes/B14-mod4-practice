@@ -1,16 +1,28 @@
 import { nowPlaying } from "./Peticion-api/api";
 
 
-export async function createDivs() {
-    const movies = await nowPlaying()
-    const app = document.querySelector("#app")
-    const section = document.createElement("section")
-    section.classList = "container-grid"
-    movies.forEach(movie => {
-        let divs = newFunction(movie);
-        section.appendChild(divs)
-        app.appendChild(section)
-    });
+export async function createDivs(movies = "vacio") {
+    if (movies === "vacio") {
+        movies = await nowPlaying()
+        const app = document.querySelector("#app")
+        const section = document.createElement("section")
+        section.classList = "container-grid"
+        movies.forEach(movie => {
+            let divs = newFunction(movie);
+            section.appendChild(divs)
+            app.appendChild(section)
+        });
+    }else{
+        const app = document.querySelector("#app")
+        const section = document.createElement("section")
+        section.classList = "container-grid"
+        movies.forEach(movie => {
+            let divs = newFunction(movie);
+            section.appendChild(divs)
+            app.appendChild(section)
+        });
+    }
+
 }
 
 function newFunction(movie) {

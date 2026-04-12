@@ -1,15 +1,26 @@
 import { bestRating } from "./Peticion-api/api";
 
-export async function showBestMovies(){
-const movies = await bestRating()
-const app = document.querySelector("#app")
-const section = document.createElement("section")
-section.classList = "container-grid"
-    movies.forEach(movie => {
-        let divs = newFunction(movie);
-        section.appendChild(divs)      
-        app.appendChild(section)
-    });
+export async function showBestMovies(movies="vacio"){
+    if (movies === "vacio") {
+            movies = await bestRating()
+            const app = document.querySelector("#app")
+            const section = document.createElement("section")
+            section.classList = "container-grid"
+            movies.forEach(movie => {
+                let divs = newFunction(movie);
+                section.appendChild(divs)
+                app.appendChild(section)
+            });
+        }else{
+            const app = document.querySelector("#app")
+            const section = document.createElement("section")
+            section.classList = "container-grid"
+            movies.forEach(movie => {
+                let divs = newFunction(movie);
+                section.appendChild(divs)
+                app.appendChild(section)
+            });
+        }
 }
 
 function newFunction(movie) {
