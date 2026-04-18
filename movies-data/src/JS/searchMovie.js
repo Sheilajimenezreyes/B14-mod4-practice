@@ -1,9 +1,8 @@
-import { showBestMovies } from "./bestRating"
+
+import { modeGrid } from "./codeGrid"
 import { createListDivs } from "./codeList"
-import { createDivs } from "./nowPlaying"
 import { searchMovie } from "./Peticion-api/api"
-import { showPopular } from "./popular"
-import { showUpcoming } from "./upcoming"
+
 
 export function searchMovies() {
     const input = document.querySelector(".input-search")
@@ -18,19 +17,10 @@ export function searchMovies() {
 
         if (mode === "list") {
             document.querySelector(".container-list").remove()
-            await createListDivs(mode,movies)
-        }else if ( modeTotal === "grid-bestRating") {
+            await createListDivs(modeTotal,movies)
+        }else if ( mode === "grid") {
             document.querySelector(".container-grid").remove()
-            await showBestMovies(movies)
-        } else if ( modeTotal === "grid-nowPlaying") {
-            document.querySelector(".container-grid").remove()
-            await createDivs(movies)
-        } else if ( modeTotal === "grid-Popular") {
-            document.querySelector(".container-grid").remove()
-           await showPopular(movies)
-        } else if (modeTotal === "grid-Proximamente") {
-            document.querySelector(".container-grid").remove()
-            await showUpcoming(movies)
+            await modeGrid(modeTotal,movies)
         }
     })
 }

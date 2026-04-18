@@ -1,9 +1,19 @@
-import { nowPlaying } from "./Peticion-api/api";
+import { bestRating, nowPlaying, popular, upcoming } from "./Peticion-api/api";
+import camaraRota from "../images/camara-rota.png" 
 
-
-export async function createDivs(movies = "vacio") {
+export async function modeGrid(mode, movies = "vacio") {
     if (movies === "vacio") {
-        movies = await nowPlaying()
+
+        if (mode === "grid-bestRating") {
+            movies = await bestRating();
+        } else if (mode === "grid-nowPlaying") {
+            movies = await nowPlaying();
+        } else if (mode === "grid-Popular") {
+            movies = await popular()
+        } else if (mode === "grid-Proximamente") {
+            movies = await upcoming()
+        }
+
         const app = document.querySelector("#app")
         const section = document.createElement("section")
         section.classList = "container-grid"
@@ -12,7 +22,7 @@ export async function createDivs(movies = "vacio") {
             section.appendChild(divs)
             app.appendChild(section)
         });
-    }else{
+    } else {
         const app = document.querySelector("#app")
         const section = document.createElement("section")
         section.classList = "container-grid"
@@ -33,6 +43,11 @@ function newFunction(movie) {
     const image = document.createElement("img");
     image.classList = "movie_poster"
     image.setAttribute("src", "https://image.tmdb.org/t/p/w200" + movie.poster_path)
+    image.onerror = () => {
+        image.onerror = null
+        image.src = camaraRota
+        image.style.maxWidth="100%"
+    }
 
     const tittle = document.createElement("h3");
     tittle.classList = "movie_tittle"
@@ -52,6 +67,3 @@ function newFunction(movie) {
     div.appendChild(description);
     return div
 }
-
-
-

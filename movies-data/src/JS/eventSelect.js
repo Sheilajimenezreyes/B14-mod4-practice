@@ -1,9 +1,5 @@
-import { showBestMovies } from "./bestRating"
+import { modeGrid } from "./codeGrid"
 import { createListDivs } from "./codeList"
-import { createDivs } from "./nowPlaying"
-import { nowPlaying, popular, upcoming } from "./Peticion-api/api"
-import { showPopular } from "./popular"
-import { showUpcoming } from "./upcoming"
 
 export function eventSelect() {
     const select = document.querySelector(".select-header")
@@ -16,8 +12,8 @@ export function eventSelect() {
                 await createListDivs(sessionStorage.getItem("category"))
             } else {
                 document.querySelector(".container-grid").remove()
-                await showBestMovies()
                 sessionStorage.setItem("category", "grid-bestRating")
+                await modeGrid(sessionStorage.getItem("category"))
             }
 
         } else if (select.value === "En Cartelera") {
@@ -27,8 +23,8 @@ export function eventSelect() {
                 await createListDivs(sessionStorage.getItem("category"))
             } else {
                 document.querySelector(".container-grid").remove()
-                await createDivs()
                 sessionStorage.setItem("category", "grid-nowPlaying")
+                await modeGrid(sessionStorage.getItem("category"))
             }
         } else if (select.value === "Popular") {
             if (container === null) {
@@ -37,8 +33,8 @@ export function eventSelect() {
                 await createListDivs(sessionStorage.getItem("category"))
             } else {
                 document.querySelector(".container-grid").remove()
-                await showPopular()
                 sessionStorage.setItem("category", "grid-Popular")
+                await modeGrid(sessionStorage.getItem("category"))
             }
         } else if (select.value === "Próximamente") {
             if (container === null) {
@@ -47,8 +43,8 @@ export function eventSelect() {
                 await createListDivs(sessionStorage.getItem("category"))
             } else {
                 document.querySelector(".container-grid").remove()
-                await showUpcoming()
                 sessionStorage.setItem("category", "grid-Proximamente")
+                await modeGrid(sessionStorage.getItem("category"))
             }
         }
     })

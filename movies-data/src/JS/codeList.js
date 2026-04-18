@@ -1,5 +1,5 @@
 import { bestRating, nowPlaying, popular, upcoming } from "./Peticion-api/api";
-
+import camaraRota from "../images/camara-rota.png"
 
 export async function createListDivs(mode, movies="vacio") {
 
@@ -43,6 +43,11 @@ function newFunction(movie) {
     const image = document.createElement("img");
     image.classList = "movie_poster"
     image.setAttribute("src", "https://image.tmdb.org/t/p/w200" + movie.poster_path)
+    image.onerror=()=>{
+        image.onerror=null
+        image.src = camaraRota
+        image.style.width = "270px"
+    }
 
     const tittle = document.createElement("h3");
     tittle.classList = "movie_tittle"
