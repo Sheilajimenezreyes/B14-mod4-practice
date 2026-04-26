@@ -1,5 +1,6 @@
 import { bestRating, nowPlaying, popular, upcoming } from "./Peticion-api/api";
 import camaraRota from "../images/camara-rota.png" 
+import { detailsMovies } from "./moviesDetails";
 
 export async function modeGrid(mode, movies = "vacio") {
     if (movies === "vacio") {
@@ -44,10 +45,15 @@ function newFunction(movie) {
     image.classList = "movie_poster"
     image.setAttribute("src", "https://image.tmdb.org/t/p/w200" + movie.poster_path)
     image.onerror = () => {
-        image.onerror = null
+        image.onerror = null 
         image.src = camaraRota
         image.style.maxWidth="100%"
     }
+    image.addEventListener("click", async ()=>{
+        let section = document.querySelector(".container-grid")
+        section.remove()
+        await detailsMovies(movie)
+    })
 
     const tittle = document.createElement("h3");
     tittle.classList = "movie_tittle"

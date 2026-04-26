@@ -1,5 +1,6 @@
 import { bestRating, nowPlaying, popular, upcoming } from "./Peticion-api/api";
 import camaraRota from "../images/camara-rota.png"
+import { detailsMovies } from "./moviesDetails";
 
 export async function createListDivs(mode, movies="vacio") {
 
@@ -48,6 +49,11 @@ function newFunction(movie) {
         image.src = camaraRota
         image.style.width = "270px"
     }
+     image.addEventListener("click", async ()=>{
+            let section = document.querySelector(".container-list")
+            section.remove()
+            await detailsMovies(movie)
+        })
 
     const tittle = document.createElement("h3");
     tittle.classList = "movie_tittle"
