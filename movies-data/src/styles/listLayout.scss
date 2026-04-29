@@ -1,28 +1,28 @@
 @use "./variables";
 
 #app {
-    padding: 50px;
+    padding: 3.125rem;
     background-color: black;
 
     .container-list {
         display: flex;
         flex-direction: column;
-        gap: 35px;
+        gap: 2.1875rem;
         width: 100%;
 
         .movie_container {
             display: grid;
-            grid-template-columns: repeat(2, 400px);
+            grid-template-columns: repeat(2, 25rem);
 
             .movie_poster {
-                margin-left: 40px;
-                height: 400px;
+                margin-left: 2.5rem;
+                height: 25rem;
                 max-width: 100%;
-                border-radius: 10px;
+                border-radius: .625rem;
             }
 
             .container_infoMovies {
-                width: 1200px;
+                width: 75rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -48,14 +48,13 @@
                 .movie_description {
                     width: 100%;
                     font-family: sans-serif;
-                    font-size: 20px;
+                    font-size: 1.25rem;
                     font-weight: 200;
                     color: variables.$letter-colour
                 }
 
             }
-
-
+            
         }
 
     }

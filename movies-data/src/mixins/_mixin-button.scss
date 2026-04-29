@@ -1,7 +1,7 @@
 @mixin buttons(){
-    border-radius: 5px;
+    border-radius: .3125rem;
     background-color: orange;
-    padding: 12px;
-    width: 80px;
+    padding: .75rem;
+    width: 5rem;
     cursor: pointer;
 }

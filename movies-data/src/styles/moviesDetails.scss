@@ -3,18 +3,18 @@
 
     .container-details {
         width: 100%;
-        height: 700px;
+        height: 43.75rem;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        gap: 80px;
+        gap: 5rem;
 
         .movie-poster {
-            height: 400px;
-            margin-left: 200px;
+            height: 25rem;
+            margin-left: 12.5rem;
         }
 
         .container-info {
@@ -23,19 +23,19 @@
             .movie-title {
                 color: white;
                 font-family: sans-serif;
-                font-size: 30px;
+                font-size: 1.875rem;
             }
 
             .rating-details {
                 color: white;
                 font-family: sans-serif;
-                font-size: 15px;
+                font-size: .9375rem;
             }
 
             .movie-description {
                 color: white;
                 font-family: sans-serif;
-                font-size: 20px;
+                font-size: 1.25rem;
             }
         }
     }
@@ -50,8 +50,8 @@
         align-items: flex-start;
         flex-wrap: nowrap;
         overflow-x: auto;
-        gap: 40px;
-        padding: 10px;
+        gap: 2.5rem;
+        padding: .625rem;
 
         .info-directors {
             display: flex;
@@ -61,8 +61,8 @@
             color: white;
 
             .director-poster {
-                width: 180px;
-                height: 220px;
+                width: 11.25rem;
+                height: 13.75rem;
                 object-fit: cover;
             }
         }
@@ -76,8 +76,8 @@
         align-items: flex-start;
         flex-wrap: nowrap;
         overflow-x: auto;
-        gap: 40px;
-        padding: 10px;
+        gap: 2.5rem;
+        padding: .625rem;
 
         .info-actors {
 
@@ -98,8 +98,8 @@
             }
 
             .actor-poster {
-                width: 180px;
-                height: 220px;
+                width: 11.25rem;
+                height: 13.75rem;
                 object-fit: cover;
             }
         }
