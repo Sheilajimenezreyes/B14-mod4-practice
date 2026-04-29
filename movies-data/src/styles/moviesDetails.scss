@@ -1,0 +1,107 @@
+#app {
+    max-width: 100%;
+
+    .container-details {
+        width: 100%;
+        height: 700px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 80px;
+
+        .movie-poster {
+            height: 400px;
+            margin-left: 200px;
+        }
+
+        .container-info {
+            width: 50%;
+
+            .movie-title {
+                color: white;
+                font-family: sans-serif;
+                font-size: 30px;
+            }
+
+            .rating-details {
+                color: white;
+                font-family: sans-serif;
+                font-size: 15px;
+            }
+
+            .movie-description {
+                color: white;
+                font-family: sans-serif;
+                font-size: 20px;
+            }
+        }
+    }
+    .title-actors , .title-directors{
+        color: white;
+
+    }
+    .container-directors {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 40px;
+        padding: 10px;
+
+        .info-directors {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            color: white;
+
+            .director-poster {
+                width: 180px;
+                height: 220px;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+    .container-actors {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 40px;
+        padding: 10px;
+
+        .info-actors {
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            color: white;
+
+            .name-actors {
+                display: -webkit-box;
+                white-space: wrap;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                overflow: hidden;
+
+            }
+
+            .actor-poster {
+                width: 180px;
+                height: 220px;
+                object-fit: cover;
+            }
+        }
+    }
+}
