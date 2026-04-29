@@ -50,6 +50,10 @@ function newFunction(movie) {
         image.style.maxWidth="100%"
     }
     image.addEventListener("click", async ()=>{
+        let secondHeader = document.querySelector(".second-header")
+        secondHeader.style.display = "none"
+        let thirdHeader = document.querySelector(".third-header")
+        thirdHeader.style.display = "block"
         let section = document.querySelector(".container-grid")
         section.remove()
         await detailsMovies(movie)
