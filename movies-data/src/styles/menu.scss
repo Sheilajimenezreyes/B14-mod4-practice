@@ -5,9 +5,9 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgb(30, 29, 29);
-  padding: 30px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 1.875rem;
+  padding-left: 3.125rem;
+  padding-right: 3.125rem;
 
 
   .left-part {
@@ -17,7 +17,7 @@
 
     ul {
       display: flex;
-      gap: 25px;
+      gap: 1.5625rem;
       list-style: none;
 
       li {
@@ -30,7 +30,7 @@
         text-decoration: none;
         color: white;
         font-family: Arial;
-        font-size: 20px;
+        font-size: 1.25rem;
         transition: transform 0.2s ease;
 
       }
@@ -39,8 +39,8 @@
 
   .right-part {
     input {
-      height: 35px;
-      border-radius: 5px;
+      height: 2.1875rem;
+      border-radius: .3125rem;
     }
 
     button {
@@ -54,9 +54,9 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgb(238, 234, 234);
-  padding: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 1.25rem;
+  padding-left: 3.125rem;
+  padding-right: 3.125rem;
 
   .second-part {
     cursor: pointer;
@@ -64,11 +64,9 @@
 
   .selects-options {
     select {
-      width: 150px;
-      height: 45px;
-      border-radius: 5px;
+      width: 9.375rem;
+      height: 2.8125rem;
+      border-radius: .3125rem;
     }
-
-
   }
 }
